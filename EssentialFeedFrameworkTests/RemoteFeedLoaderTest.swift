@@ -7,9 +7,9 @@
 
 
 //Load Feed Use Cases (happy path)
-//Data URL
-//1. Execute "Load Feed Items" command with above data.
-//2. System downloads data from the URL.
+//Data URL  (covered)
+//1. Execute "Load Feed Items" command with above data.(covered)
+//2. System downloads data from the URL.(covered)
 //3. Sysem validate downloaded data.
 //4. System creates feed item from valid data.
 //5. Systen delivers feed items.
@@ -22,27 +22,8 @@
 
 import XCTest
 
-class RemoteFeedLoader {
-    
-    let client : HTTPClient
-    let url : URL
-    
-    init(url: URL, client: HTTPClient) {
-        self.url = url
-        self.client = client
-    }
-    
-    
-    func load()  {
-        client.get(from: url)
-    }
-}
+import EssentialFeedFramework
 
-protocol HTTPClient {
-     
-    func get(from url: URL)
-    
-}
 
 
 class RemoteFeedLoaderTest: XCTestCase {
