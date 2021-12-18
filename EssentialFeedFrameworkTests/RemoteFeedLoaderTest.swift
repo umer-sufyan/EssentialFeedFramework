@@ -51,9 +51,11 @@ class RemoteFeedLoaderTest: XCTestCase {
         
         //Act or when we invoke sut.load()
         sut.load()
+        sut.load()
         
         //then or Assert, then assert that a URL request was initiated in the client
-        XCTAssertNotNil(client.requestedURL)
+        
+        XCTAssertEqual(client.requestedURLs, [url, url])
         
     }
     
@@ -68,9 +70,12 @@ class RemoteFeedLoaderTest: XCTestCase {
    private class HTTPClientSpy: HTTPClient {
         
         var requestedURL : URL?
+        var requestedURLs = [URL]()
+    
         
         func get(from url: URL) {
             requestedURL = url
+            requestedURLs.append(url)
         }
         
         
