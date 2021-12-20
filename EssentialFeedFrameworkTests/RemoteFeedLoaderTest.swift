@@ -119,14 +119,14 @@ class RemoteFeedLoaderTest: XCTestCase {
                         toCompleteWithError error: RemoteFeedLoader.Error, when
                             action: ()->Void, file: StaticString = #file, line: UInt = #line){
         
-        var capturedError = [RemoteFeedLoader.Error]()
+        var capturedResult = [RemoteFeedLoader.Result]()
         sut.load {
-            capturedError.append($0)
+            capturedResult.append($0)
         }
         
         action()
         
-        XCTAssertEqual(capturedError, [error], file:file,line:line)
+        XCTAssertEqual(capturedResult, [.failure(error)], file:file,line:line)
     }
     
     
