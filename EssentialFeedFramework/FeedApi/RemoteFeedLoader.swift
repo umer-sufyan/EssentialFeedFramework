@@ -64,6 +64,7 @@ public final class RemoteFeedLoader {
 
 private class FeedItemMapper {
     
+    // be careful of decodable design because it can couple
     private struct Root: Decodable {
         let items : [Item]
     }
