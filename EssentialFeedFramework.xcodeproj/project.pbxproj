@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180A071F27731417000CE275 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A071E27731417000CE275 /* HTTPClient.swift */; };
 		189047DF276D8A72003783C2 /* EssentialFeedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189047D5276D8A72003783C2 /* EssentialFeedFramework.framework */; };
 		189047E4276D8A72003783C2 /* EssentialFeedFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189047E3276D8A72003783C2 /* EssentialFeedFrameworkTests.swift */; };
 		189047E6276D8A72003783C2 /* EssentialFeedFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 189047D8276D8A72003783C2 /* EssentialFeedFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180A071E27731417000CE275 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		189047D5276D8A72003783C2 /* EssentialFeedFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeedFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		189047D8276D8A72003783C2 /* EssentialFeedFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeedFramework.h; sourceTree = "<group>"; };
 		189047D9276D8A72003783C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				18F21544276E42C60015EF0F /* RemoteFeedLoader.swift */,
+				180A071E27731417000CE275 /* HTTPClient.swift */,
 			);
 			path = FeedApi;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				189047F6276D8B65003783C2 /* FeedLoader.swift in Sources */,
 				18F21545276E42C60015EF0F /* RemoteFeedLoader.swift in Sources */,
+				180A071F27731417000CE275 /* HTTPClient.swift in Sources */,
 				189047F2276D8ABC003783C2 /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

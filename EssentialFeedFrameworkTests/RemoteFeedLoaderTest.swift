@@ -11,8 +11,8 @@
 //1. Execute "Load Feed Items" command with above data.(covered)
 //2. System downloads data from the URL.(covered)
 //3. Sysem validate downloaded data. (covered)
-//4. System creates feed item from valid data.
-//5. Systen delivers feed items.
+//4. System creates feed item from valid data. (covered)
+//5. Systen delivers feed items. (covered)
 
 //Invalid data - errors course (sad path)
 //1. System delivers error. (covered)
