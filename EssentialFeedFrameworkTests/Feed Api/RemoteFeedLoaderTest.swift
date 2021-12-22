@@ -171,7 +171,7 @@ class RemoteFeedLoaderTest: XCTestCase {
     }
     
     /**
-                By using factory methods in the test scope, we also prevent our test methods from breaking in the future if we ever decide to change the production types again!
+        By using factory methods in the test scope, we also prevent our test methods from breaking in the future if we ever decide to change the production types again!
      */
     
     private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
