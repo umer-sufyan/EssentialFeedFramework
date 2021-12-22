@@ -26,6 +26,6 @@ extension FeedItem: Decodable {
         case id
         case description
         case location
-        case imageURL = "image"
+        case imageURL = "image" // Red flag! An API detail leaked into our feature module , this make strong dependency, while this should be agnostic , A seemingly harmless string in the wrong module can end up our abstractions!
     }
 }
