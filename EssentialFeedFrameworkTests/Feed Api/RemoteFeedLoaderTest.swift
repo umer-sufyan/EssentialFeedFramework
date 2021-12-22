@@ -73,7 +73,7 @@ class RemoteFeedLoaderTest: XCTestCase {
     func test_load_deliversErrorsOnClientError()  {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.connectivity), when: {
+        expect(sut, toCompleteWith: failure(.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0)
              
              client.complete(with: clientError)
@@ -89,7 +89,7 @@ class RemoteFeedLoaderTest: XCTestCase {
         samples.enumerated().forEach{
             index, code in
             
-            expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData), when: {
+            expect(sut, toCompleteWith: failure(.invalidData), when: {
                 let json = makeItemsJSON([])
                 client.complete(withStatusCode: code, data: json, at: index)
             })
@@ -101,7 +101,7 @@ class RemoteFeedLoaderTest: XCTestCase {
     func test_load_deliversErrorsOn200ResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
         
-        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData), when: {
+        expect(sut, toCompleteWith: failure(.invalidData), when: {
             let invalidJSON = Data( _ : "InvalidJson".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
             
@@ -169,6 +169,15 @@ class RemoteFeedLoaderTest: XCTestCase {
         trackForMemoryLeaks(client)
         return (sut, client)
     }
+    
+    /**
+                By using factory methods in the test scope, we also prevent our test methods from breaking in the future if we ever decide to change the production types again!
+     */
+    
+    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
+        return .failure(error)
+    }
+    
     private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line){
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "Instance sould have been deallocated. Potential memory leak.", file: file, line: line)
