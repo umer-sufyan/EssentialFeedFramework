@@ -11,15 +11,13 @@ public final class RemoteFeedLoader {
     private let url : URL
     private let client : HTTPClient
     
-    public enum Error: Swift.Error {
+    public enum Error: Swift.Error {  //The RemoteFeedLoader domain-specific Error type is a lower level implementation
+        //detail of the Feed API module. Thus we don't want it in the higher-level Feed Feature module.
         case connectivity
         case invalidData
     }
     
-    public enum Result:Equatable{
-        case success([FeedItem])
-        case failure(Error)
-    }
+    public typealias Result = LoadFeedResult<Error>
   
     
    public init(url: URL, client: HTTPClient) {
