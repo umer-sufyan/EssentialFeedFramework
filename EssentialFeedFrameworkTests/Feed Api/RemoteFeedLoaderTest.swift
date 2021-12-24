@@ -169,7 +169,6 @@ class RemoteFeedLoaderTest: XCTestCase {
         trackForMemoryLeaks(client)
         return (sut, client)
     }
-    
     /**
         By using factory methods in the test scope, we also prevent our test methods from breaking in the future if we ever decide to change the production types again!
      */
@@ -178,12 +177,7 @@ class RemoteFeedLoaderTest: XCTestCase {
         return .failure(error)
     }
     
-    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line){
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance sould have been deallocated. Potential memory leak.", file: file, line: line)
-        }
-    }
-    
+
     private func makeItemsJSON(_ items:[[String:Any]])->Data {
         let json = ["items" : items]
        return try! JSONSerialization.data(withJSONObject: json)
