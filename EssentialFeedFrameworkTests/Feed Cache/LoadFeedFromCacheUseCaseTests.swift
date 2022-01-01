@@ -23,15 +23,15 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
-        
+    
     func test_load_failsOnRetrievalError() {
-            let (sut, store) = makeSUT()
-            let retrievalError = anyNSError()
+        let (sut, store) = makeSUT()
+        let retrievalError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(retrievalError), when: {
             store.completeRetrieval(with: retrievalError)
         })
-        }
+    }
     
     func test_load_deliversNoImagesOnEmptyCache() {
         let (sut, store) = makeSUT()
@@ -60,6 +60,17 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         
         expect(sut, toCompleteWith: .success([]), when: {
             store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
+        })
+    }
+    
+    func test_load_deliversNoImagesOnMoreThanSevenDaysOldCache() {
+        let feed = uniqueImageFeed()
+        let fixedCurrentDate = Date()
+        let moreThanSevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+        let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
+        
+        expect(sut, toCompleteWith: .success([]), when: {
+            store.completeRetrieval(with: feed.local, timestamp: moreThanSevenDaysOldTimestamp)
         })
     }
     
@@ -108,9 +119,9 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         return URL(string: "http://any-url.com")!
     }
     
-        private func anyNSError() -> NSError {
-            return NSError(domain: "any error", code: 0)
-        }
+    private func anyNSError() -> NSError {
+        return NSError(domain: "any error", code: 0)
+    }
 }
 
 private extension Date {
