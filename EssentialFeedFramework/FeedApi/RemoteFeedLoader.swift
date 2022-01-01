@@ -48,7 +48,6 @@ public final class RemoteFeedLoader: FeedLoader {
             return .failure(error)
         }
     }
-    
 }
 
 private extension Array where Element == RemoteFeedItem {
