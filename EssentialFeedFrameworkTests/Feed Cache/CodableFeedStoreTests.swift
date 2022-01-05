@@ -9,7 +9,7 @@ import XCTest
 import EssentialFeedFramework
 
 
-
+// comment out in order to go with Codable FeedStore to go with CoreData
 class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     override func setUp() {
@@ -138,3 +138,4 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
 }
+//
