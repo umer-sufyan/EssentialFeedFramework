@@ -190,9 +190,8 @@ class RemoteFeedLoaderTest: XCTestCase {
             "description": description,
             "location" : location,
             "image" : imageURL.absoluteString
-        ].reduce(into: [String : Any]()){ (acc, e) in
-            if let value = e.value { acc[e.key] = value}
-        } // we used that to remove nil, in swift 5 compact Map does the same , but we don't have yet that
+        ].compactMapValues { $0 }
+         // we used that to remove nil, in swift 5 compact Map value does the same , but we don't have yet that
         
         return (item, json)
     }
