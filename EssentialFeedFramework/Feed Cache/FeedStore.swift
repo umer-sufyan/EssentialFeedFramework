@@ -8,7 +8,7 @@
 import Foundation
 
  
-public typealias CacheFeed = (feed : [LocalFeedImage], timestamp: Date)
+public typealias CachedFeed = (feed : [LocalFeedImage], timestamp: Date)
     
 
 public protocol FeedStore {
@@ -17,7 +17,7 @@ public protocol FeedStore {
     typealias InsertionResult = Result<Void, Error>
     typealias InsertionCompletion = (InsertionResult) -> Void
     
-    typealias RetrievalResult = Result<CacheFeed?, Error>
+    typealias RetrievalResult = Result<CachedFeed?, Error>
     
     typealias RetrievalCompletion = (RetrievalResult) -> Void
     
