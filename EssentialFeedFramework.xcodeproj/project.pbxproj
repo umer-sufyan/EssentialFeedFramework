@@ -24,6 +24,7 @@
 		18286EE92789CCFE007A176D /* EssentialFeedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189047D5276D8A72003783C2 /* EssentialFeedFramework.framework */; platformFilter = ios; };
 		18286EEA2789CCFE007A176D /* EssentialFeedFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 189047D5276D8A72003783C2 /* EssentialFeedFramework.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18286EF32789CDCC007A176D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4D88277612CC00A687BB /* XCTestCase+MemoryLeakTracking.swift */; };
+		18286EFA2789DFB7007A176D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18286EF92789DFB7007A176D /* FeedViewController.swift */; };
 		1855A3C627807121008EE8BC /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855A3C527807121008EE8BC /* LoadFeedFromCacheUseCaseTests.swift */; };
 		1855A3CC278072EC008EE8BC /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855A3CB278072EC008EE8BC /* FeedStoreSpy.swift */; };
 		1855A3E327809707008EE8BC /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855A3E227809707008EE8BC /* ValidateFeedCacheUseCaseTests.swift */; };
@@ -129,6 +130,7 @@
 		18286EB22789C32E007A176D /* EssentialFeedFramworkiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedFramworkiOSTests.swift; sourceTree = "<group>"; };
 		18286EB42789C32E007A176D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18286EE02789C9D3007A176D /* FeedViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTest.swift; sourceTree = "<group>"; };
+		18286EF92789DFB7007A176D /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		1855A3C527807121008EE8BC /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		1855A3CB278072EC008EE8BC /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		1855A3E227809707008EE8BC /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				18286EA72789C32D007A176D /* EssentialFeedFramworkiOS.h */,
 				18286EA82789C32D007A176D /* Info.plist */,
+				18286EF92789DFB7007A176D /* FeedViewController.swift */,
 			);
 			path = EssentialFeedFramworkiOS;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 					};
 					18286EA42789C32D007A176D = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 					18286EAC2789C32E007A176D = {
 						CreatedOnToolsVersion = 12.3;
@@ -675,6 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18286EFA2789DFB7007A176D /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +852,7 @@
 		18286EB62789C32E007A176D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D86A526GH8;
@@ -865,6 +871,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -873,6 +880,7 @@
 		18286EB72789C32E007A176D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D86A526GH8;
@@ -900,6 +908,7 @@
 		18286EB82789C32E007A176D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D86A526GH8;
 				INFOPLIST_FILE = EssentialFeedFramworkiOSTests/Info.plist;
@@ -920,6 +929,7 @@
 		18286EB92789C32E007A176D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D86A526GH8;
 				INFOPLIST_FILE = EssentialFeedFramworkiOSTests/Info.plist;
