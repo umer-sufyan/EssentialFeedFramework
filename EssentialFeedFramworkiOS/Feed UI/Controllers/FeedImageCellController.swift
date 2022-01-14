@@ -9,17 +9,15 @@ import EssentialFeedFramework
 
 final class FeedImageCellController {
     
-    private let viewModel: FeedImageViewModel
+    private let viewModel: FeedImageViewModel<UIImage>
     
-    init(viewModel: FeedImageViewModel) {
+    init(viewModel: FeedImageViewModel<UIImage>) {
         self.viewModel = viewModel
     }
     
     func view() -> UITableViewCell {
-        
         let cell = binded(FeedImageCell())
         viewModel.loadImageData()
-        
         return cell
     }
     
