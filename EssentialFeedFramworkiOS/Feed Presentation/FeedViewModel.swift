@@ -5,7 +5,6 @@
 //  Created by Apple on 13/01/2022.
 //
 
-import UIKit
 import EssentialFeedFramework
 
 final class FeedViewModel {
