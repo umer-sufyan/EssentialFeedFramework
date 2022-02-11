@@ -7,10 +7,6 @@
 import Foundation
 import EssentialFeedFramework
 
-struct FeedErrorViewModel {
-    let message: String?
-}
-
 protocol FeedErrorView {
     func display(_ viewModel: FeedErrorViewModel)
 }
