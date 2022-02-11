@@ -4,9 +4,10 @@
 //
 //  Created by Apple on 17/01/2022.
 //
-
+import Foundation
 import XCTest
-@testable import EssentialFeedFramworkiOS
+import EssentialFeedFramework
+//@testable import EssentialFeedFramworkiOS
 
 final class FeedLocalizationTests: XCTestCase {
     
