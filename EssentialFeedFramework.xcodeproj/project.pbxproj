@@ -58,6 +58,7 @@
 		1863544B277EE7810098FDF2 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863544A277EE7810098FDF2 /* CacheFeedUseCaseTests.swift */; };
 		1866B60C27B7B4A4007612B8 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B60B27B7B4A4007612B8 /* FeedLocalizationTests.swift */; };
 		1866B61727B7B93F007612B8 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */; };
+		1866B63C27B7BB55007612B8 /* RemoteFeedImageDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B63B27B7BB55007612B8 /* RemoteFeedImageDataLoaderTests.swift */; };
 		186D6B542780699600D19EBF /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D6B532780699600D19EBF /* RemoteFeedItem.swift */; };
 		186D6B5927806A0B00D19EBF /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D6B5827806A0B00D19EBF /* LocalFeedImage.swift */; };
 		1877121927946A52008B380F /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877121827946A52008B380F /* UITableView+Dequeueing.swift */; };
@@ -195,6 +196,7 @@
 		18582CE5278D93B50040BC9F /* FeedViewControllerTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Assertions.swift"; sourceTree = "<group>"; };
 		1863544A277EE7810098FDF2 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		1866B60B27B7B4A4007612B8 /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedLocalizationTests.swift; path = "../../../../../../../04/UI + Presentation Module/Lecture 10/Decorator Pattern Decoupling UIKit Components From Threading Details, Removing Duplication, and Implementing Cross-Cutting Concerns In a Clean & SOLID Way/EssentialFeedFramework/EssentialFeedFramworkiOSTests/Feed Presentation/FeedLocalizationTests.swift"; sourceTree = "<group>"; };
+		1866B63B27B7BB55007612B8 /* RemoteFeedImageDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedImageDataLoaderTests.swift; sourceTree = "<group>"; };
 		186D6B532780699600D19EBF /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		186D6B5827806A0B00D19EBF /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		1877121827946A52008B380F /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				18F21539276E1F1D0015EF0F /* RemoteFeedLoaderTest.swift */,
 				1809CB3227745D300045085B /* URLSessionHTTPClientTests.swift */,
+				1866B63B27B7BB55007612B8 /* RemoteFeedImageDataLoaderTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				1855A4252780E847008EE8BC /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 				1856D7C527B664CD0072E922 /* FeedPreseterTests.swift in Sources */,
 				1866B60C27B7B4A4007612B8 /* FeedLocalizationTests.swift in Sources */,
+				1866B63C27B7BB55007612B8 /* RemoteFeedImageDataLoaderTests.swift in Sources */,
 				18F2153A276E1F1D0015EF0F /* RemoteFeedLoaderTest.swift in Sources */,
 				1855A4402780F145008EE8BC /* CoreDataFeedStoreTests.swift in Sources */,
 				184427EA27B6868B0056A0D4 /* FeedImagePresenterTests.swift in Sources */,
