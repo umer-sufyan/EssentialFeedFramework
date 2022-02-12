@@ -57,11 +57,11 @@
 		18582CE6278D93B50040BC9F /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18582CE5278D93B50040BC9F /* FeedViewControllerTests+Assertions.swift */; };
 		1863544B277EE7810098FDF2 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863544A277EE7810098FDF2 /* CacheFeedUseCaseTests.swift */; };
 		1866B60C27B7B4A4007612B8 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B60B27B7B4A4007612B8 /* FeedLocalizationTests.swift */; };
+		1866B61727B7B93F007612B8 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */; };
 		186D6B542780699600D19EBF /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D6B532780699600D19EBF /* RemoteFeedItem.swift */; };
 		186D6B5927806A0B00D19EBF /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D6B5827806A0B00D19EBF /* LocalFeedImage.swift */; };
 		1877121927946A52008B380F /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877121827946A52008B380F /* UITableView+Dequeueing.swift */; };
 		1877122027946B67008B380F /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877121F27946B67008B380F /* UIImageView+Animations.swift */; };
-		1877FC4D278D7B0100F953F2 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */; };
 		1877FC72278D837100F953F2 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC71278D837100F953F2 /* UIImage+TestHelpers.swift */; };
 		1877FC85278D84CA00F953F2 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC84278D84CA00F953F2 /* UIRefreshControl+TestHelpers.swift */; };
 		1877FC91278D850000F953F2 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC90278D850000F953F2 /* UIButton+TestHelpers.swift */; };
@@ -419,7 +419,6 @@
 		1877FC4B278D7AC400F953F2 /* Feed Image Loader */ = {
 			isa = PBXGroup;
 			children = (
-				1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */,
 			);
 			path = "Feed Image Loader";
 			sourceTree = "<group>";
@@ -570,6 +569,7 @@
 			children = (
 				189047F1276D8ABC003783C2 /* FeedImage.swift */,
 				189047F5276D8B65003783C2 /* FeedLoader.swift */,
+				1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */,
 			);
 			path = FeedFeature;
 			sourceTree = "<group>";
@@ -861,7 +861,6 @@
 			files = (
 				1878208327B63E5C00F9ECC6 /* ErrorView.swift in Sources */,
 				1878209D27B64A1400F9ECC6 /* UIRefreshControl+Helpers.swift in Sources */,
-				1877FC4D278D7B0100F953F2 /* FeedImageDataLoader.swift in Sources */,
 				1877121927946A52008B380F /* UITableView+Dequeueing.swift in Sources */,
 				1884BD64278BF47400DBF125 /* UIView+Shimmering.swift in Sources */,
 				18E088B8279548EE00DD3875 /* FeedLoaderPresentationAdapter.swift in Sources */,
@@ -918,6 +917,7 @@
 				189047F2276D8ABC003783C2 /* FeedImage.swift in Sources */,
 				187AAABD27770CC80003EA38 /* URLSessionHTTPClient.swift in Sources */,
 				1856D81227B675460072E922 /* FeedErrorViewModel.swift in Sources */,
+				1866B61727B7B93F007612B8 /* FeedImageDataLoader.swift in Sources */,
 				1856D80B27B6750D0072E922 /* FeedLoadingViewModel.swift in Sources */,
 				184427F127B68C170056A0D4 /* FeedImagePresenter.swift in Sources */,
 				1855A4472780F21E008EE8BC /* CoreDataFeedStore.swift in Sources */,
@@ -1222,6 +1222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1281,6 +1282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1310,7 +1312,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.globridgetech.EssentialFeedFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1338,7 +1340,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.globridgetech.EssentialFeedFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
