@@ -5,6 +5,7 @@
 //  Created by Apple on 11/01/2022.
 //
 import UIKit
+import EssentialFeedFramework
 
 protocol FeedImageCellControllerDelegate {
     func didRequestImage()
