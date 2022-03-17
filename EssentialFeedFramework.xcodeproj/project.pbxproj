@@ -31,6 +31,7 @@
 		18119DEF27E2E68E002151DF /* FEED_WITH_FAILED_IMAGE_LOADING_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 18119DE327E2E68E002151DF /* FEED_WITH_FAILED_IMAGE_LOADING_light.png */; };
 		18119DF027E2E68E002151DF /* EMPTY_FEED_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 18119DE427E2E68E002151DF /* EMPTY_FEED_dark.png */; };
 		18119DF127E2E68E002151DF /* FEED_WITH_ERROR_MESSAGE_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 18119DE527E2E68E002151DF /* FEED_WITH_ERROR_MESSAGE_light.png */; };
+		18119DFD27E2E712002151DF /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18119DFC27E2E712002151DF /* UIViewController+Snapshot.swift */; };
 		1814D926278D751C00D5E7B7 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C84A8D278ABDA500FEA7A8 /* FeedImageCell.swift */; };
 		18286EAE2789C32E007A176D /* EssentialFeedFramworkiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18286EA52789C32D007A176D /* EssentialFeedFramworkiOS.framework */; };
 		18286EB52789C32E007A176D /* EssentialFeedFramworkiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 18286EA72789C32D007A176D /* EssentialFeedFramworkiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -183,6 +184,7 @@
 		18119DE327E2E68E002151DF /* FEED_WITH_FAILED_IMAGE_LOADING_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_FAILED_IMAGE_LOADING_light.png; sourceTree = "<group>"; };
 		18119DE427E2E68E002151DF /* EMPTY_FEED_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EMPTY_FEED_dark.png; sourceTree = "<group>"; };
 		18119DE527E2E68E002151DF /* FEED_WITH_ERROR_MESSAGE_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_ERROR_MESSAGE_light.png; sourceTree = "<group>"; };
+		18119DFC27E2E712002151DF /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
 		18286EA52789C32D007A176D /* EssentialFeedFramworkiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeedFramworkiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18286EA72789C32D007A176D /* EssentialFeedFramworkiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeedFramworkiOS.h; sourceTree = "<group>"; };
 		18286EA82789C32D007A176D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				18BCF56127DC68A60080F60B /* UIImage+TestHelpers.swift */,
+				18119DFC27E2E712002151DF /* UIViewController+Snapshot.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 			files = (
 				18286EF32789CDCC007A176D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				18BCF55227DC63A70080F60B /* FeedSnapshotTests.swift in Sources */,
+				18119DFD27E2E712002151DF /* UIViewController+Snapshot.swift in Sources */,
 				18BCF56227DC68A60080F60B /* UIImage+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
