@@ -1,26 +1,26 @@
 //
-//  RemoteFeedLoader.swift
+//  RemoteImageCommentLoader.swift
 //  EssentialFeedFramework
 //
-//  Created by Apple on 18/12/2021.
+//  Created by Apple on 05/06/2022.
 //
 
 import Foundation
 
-public final class RemoteFeedLoader: FeedLoader {
+public final class RemoteImageCommentLoader: FeedLoader {
     private let url : URL
     private let client : HTTPClient
     
-    public enum Error: Swift.Error {  //The RemoteFeedLoader domain-specific Error type is a lower level implementation
+    public enum Error: Swift.Error {  //The RemoteImageCommentLoader domain-specific Error type is a lower level implementation
         //detail of the Feed API module. Thus we don't want it in the higher-level Feed Feature module.
         case connectivity
         case invalidData
     }
     
     public typealias Result = FeedLoader.Result
-  
     
-   public init(url: URL, client: HTTPClient) {
+    
+    public init(url: URL, client: HTTPClient) {
         self.url = url
         self.client = client
     }
@@ -34,7 +34,7 @@ public final class RemoteFeedLoader: FeedLoader {
             
             switch result {
             case let .success((data, response)):
-                completion(RemoteFeedLoader.map(data, from: response))
+                completion(RemoteImageCommentLoader.map(data, from: response))
             case .failure:
                 completion(.failure(Error.connectivity))
             }
@@ -42,7 +42,7 @@ public final class RemoteFeedLoader: FeedLoader {
     }
     private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {
-            let items = try FeedItemMapper.map(data, from: response)
+            let items = try ImageCommentsMapper.map(data, from: response)
             return .success(items.toModels())
         } catch {
             return .failure(error)
@@ -55,9 +55,3 @@ private extension Array where Element == RemoteFeedItem {
         return map { FeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.image) }
     }
 }
-
-
-
-
-
-
