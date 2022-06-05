@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteImageCommentLoader: FeedLoader {
+public final class RemoteImageCommentsLoader: FeedLoader {
     private let url : URL
     private let client : HTTPClient
     
@@ -34,7 +34,7 @@ public final class RemoteImageCommentLoader: FeedLoader {
             
             switch result {
             case let .success((data, response)):
-                completion(RemoteImageCommentLoader.map(data, from: response))
+                completion(RemoteImageCommentsLoader.map(data, from: response))
             case .failure:
                 completion(.failure(Error.connectivity))
             }
