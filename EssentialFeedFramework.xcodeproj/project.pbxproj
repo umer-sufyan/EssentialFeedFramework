@@ -378,9 +378,7 @@
 		182A76DD277331470061033B /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				188A218A27B91ED00098A27C /* Helpers */,
 				18F21539276E1F1D0015EF0F /* RemoteFeedLoaderTest.swift */,
-				1809CB3227745D300045085B /* URLSessionHTTPClientTests.swift */,
 				1866B63B27B7BB55007612B8 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
 				18A8F5B627B8EBCD001AF4A1 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				182FCEED284C76E200F93E23 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
@@ -394,6 +392,47 @@
 				182FCF08284C865700F93E23 /* ImageComment.swift */,
 			);
 			path = "Image Comments Feature";
+			sourceTree = "<group>";
+		};
+		183B38ED284D8E380036C620 /* Shared API */ = {
+			isa = PBXGroup;
+			children = (
+				180A071E27731417000CE275 /* HTTPClient.swift */,
+			);
+			path = "Shared API";
+			sourceTree = "<group>";
+		};
+		183B38EE284D8E8B0036C620 /* Shared API Infra */ = {
+			isa = PBXGroup;
+			children = (
+				187AAABC27770CC80003EA38 /* URLSessionHTTPClient.swift */,
+			);
+			path = "Shared API Infra";
+			sourceTree = "<group>";
+		};
+		183B38EF284D8EB00036C620 /* Shared API */ = {
+			isa = PBXGroup;
+			children = (
+				183B38F0284D8EDF0036C620 /* Helpers */,
+			);
+			path = "Shared API";
+			sourceTree = "<group>";
+		};
+		183B38F0284D8EDF0036C620 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				188A218B27B91EE10098A27C /* HTTPClientSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		183B38F1284D8F080036C620 /* Shared API Infra */ = {
+			isa = PBXGroup;
+			children = (
+				188A218A27B91ED00098A27C /* Helpers */,
+				1809CB3227745D300045085B /* URLSessionHTTPClientTests.swift */,
+			);
+			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
 		1855A3CA2780729E008EE8BC /* Helpers */ = {
@@ -540,7 +579,6 @@
 		188A218A27B91ED00098A27C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				188A218B27B91EE10098A27C /* HTTPClientSpy.swift */,
 				18D885E927BA254700F505D2 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
@@ -584,6 +622,8 @@
 		189047D7276D8A72003783C2 /* EssentialFeedFramework */ = {
 			isa = PBXGroup;
 			children = (
+				183B38EE284D8E8B0036C620 /* Shared API Infra */,
+				183B38ED284D8E380036C620 /* Shared API */,
 				182FCF07284C860200F93E23 /* Image Comments Feature */,
 				189047D8276D8A72003783C2 /* EssentialFeedFramework.h */,
 				189047D9276D8A72003783C2 /* Info.plist */,
@@ -598,6 +638,8 @@
 		189047E2276D8A72003783C2 /* EssentialFeedFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				183B38F1284D8F080036C620 /* Shared API Infra */,
+				183B38EF284D8EB00036C620 /* Shared API */,
 				189047E5276D8A72003783C2 /* Info.plist */,
 				187E4D7F277611FC00A687BB /* Helpers */,
 				18635449277EE7240098FDF2 /* Feed Cache */,
@@ -679,8 +721,6 @@
 				180A072227731526000CE275 /* FeedItemsMapper.swift */,
 				182FCEFB284C795E00F93E23 /* ImageCommentsMapper.swift */,
 				186D6B532780699600D19EBF /* RemoteFeedItem.swift */,
-				180A071E27731417000CE275 /* HTTPClient.swift */,
-				187AAABC27770CC80003EA38 /* URLSessionHTTPClient.swift */,
 				188A219727B91FF20098A27C /* RemoteFeedImageDataLoader.swift */,
 			);
 			path = FeedApi;
