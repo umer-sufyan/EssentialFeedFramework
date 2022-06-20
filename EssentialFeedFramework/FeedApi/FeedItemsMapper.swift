@@ -9,7 +9,7 @@ import Foundation
 
 
 
- final class FeedItemMapper {
+ final class FeedItemsMapper {
     
     // be careful of decodable design because it can couple
     private struct Root: Decodable {
