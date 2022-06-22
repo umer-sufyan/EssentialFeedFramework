@@ -200,7 +200,6 @@ class RemoteFeedLoaderTest: XCTestCase {
                         toCompleteWith expectedResult: RemoteFeedLoader.Result, when
                             action: ()->Void, file: StaticString = #file, line: UInt = #line){
         
-        
         let exp = expectation(description: "wait for load completion")
         
         sut.load { receivedResult in
@@ -220,10 +219,7 @@ class RemoteFeedLoaderTest: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
         
-        
     }
-    
-    
     
     private class HTTPClientSpy: HTTPClient {
         
