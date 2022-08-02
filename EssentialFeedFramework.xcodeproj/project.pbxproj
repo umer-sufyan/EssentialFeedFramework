@@ -94,6 +94,7 @@
 		1895E776277F24D100C81EEE /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1895E775277F24D100C81EEE /* FeedStore.swift */; };
 		18995F3127C0C5BE00481D6B /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18995F3027C0C5BE00481D6B /* FeedCache.swift */; };
 		18995F4427C0CE0D00481D6B /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18995F4327C0CE0D00481D6B /* FeedImageDataCache.swift */; };
+		189A8DA02898EC04008E4CBA /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189A8DA22898EC04008E4CBA /* Shared.strings */; };
 		18A8F5B727B8EBCD001AF4A1 /* FeedItemsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8F5B627B8EBCD001AF4A1 /* FeedItemsMapperTests.swift */; };
 		18BCF55227DC63A70080F60B /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCF55127DC63A70080F60B /* FeedSnapshotTests.swift */; };
 		18BCF56227DC68A60080F60B /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCF56127DC68A60080F60B /* UIImage+TestHelpers.swift */; };
@@ -107,6 +108,7 @@
 		18D8862A27BA38BA00F505D2 /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8862927BA38BA00F505D2 /* CoreDataFeedImageDataStoreTests.swift */; };
 		18E0856C27BD16670056A45C /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E0856B27BD16670056A45C /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
 		18E0857327BD1D4F0056A45C /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E0857227BD1D4F0056A45C /* CoreDataFeedStore+FeedStore.swift */; };
+		18FA9679289932A100542420 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA9678289932A100542420 /* SharedLocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +253,9 @@
 		1895E775277F24D100C81EEE /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		18995F3027C0C5BE00481D6B /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
 		18995F4327C0CE0D00481D6B /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
+		189A8DA12898EC04008E4CBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
+		189A8DA32898EC05008E4CBA /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
+		189A8DA42898EC06008E4CBA /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		18A8F5B627B8EBCD001AF4A1 /* FeedItemsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapperTests.swift; sourceTree = "<group>"; };
 		18BCF55127DC63A70080F60B /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
 		18BCF56127DC68A60080F60B /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
@@ -266,6 +271,7 @@
 		18E0856527BD0B920056A45C /* FeedStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FeedStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		18E0856B27BD16670056A45C /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		18E0857227BD1D4F0056A45C /* CoreDataFeedStore+FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedStore.swift"; sourceTree = "<group>"; };
+		18FA9678289932A100542420 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				1814DE2028983A7700413C73 /* LoadResourcePresenter.swift */,
+				189A8DA22898EC04008E4CBA /* Shared.strings */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -349,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				1814DE2828983B0700413C73 /* LoadResourcePresenterTests.swift */,
+				18FA9678289932A100542420 /* SharedLocalizationTests.swift */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -982,6 +990,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1856D7F827B673240072E922 /* Feed.strings in Resources */,
+				189A8DA02898EC04008E4CBA /* Shared.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1101,6 +1110,7 @@
 				1855A3E827809B07008EE8BC /* FeedCacheTestHelpers.swift in Sources */,
 				1855A3E327809707008EE8BC /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				1855A3CC278072EC008EE8BC /* FeedStoreSpy.swift in Sources */,
+				18FA9679289932A100542420 /* SharedLocalizationTests.swift in Sources */,
 				18D8861C27BA341100F505D2 /* FeedImageDataStoreSpy.swift in Sources */,
 				1855A3C627807121008EE8BC /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				18D885F627BA29F000F505D2 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
@@ -1154,6 +1164,16 @@
 				1856D7EA27B66F980072E922 /* pt-BR */,
 			);
 			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+		189A8DA22898EC04008E4CBA /* Shared.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189A8DA12898EC04008E4CBA /* en */,
+				189A8DA32898EC05008E4CBA /* el */,
+				189A8DA42898EC06008E4CBA /* pt-BR */,
+			);
+			name = Shared.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
