@@ -704,12 +704,12 @@
 		189047E2276D8A72003783C2 /* EssentialFeedFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				183B38FD284D90120036C620 /* Image Comments API */,
 				1852EEBE289BEFE60041ACE4 /* Image Comments Presentation */,
 				187E4D7F277611FC00A687BB /* Helpers */,
 				1814DE2728983AD700413C73 /* Shared Presentation */,
 				183B38EF284D8EB00036C620 /* Shared API */,
 				183B38F1284D8F080036C620 /* Shared API Infra */,
-				183B38FD284D90120036C620 /* Image Comments API */,
 				189047E5276D8A72003783C2 /* Info.plist */,
 				18635449277EE7240098FDF2 /* Feed Cache */,
 				182A76DD277331470061033B /* Feed API */,
