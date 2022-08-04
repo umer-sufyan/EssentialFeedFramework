@@ -12,6 +12,8 @@ public protocol FeedImageCellControllerDelegate {
     func didCancelImageRequest()
 }
 
+
+
 public final class FeedImageCellController:CellController, ResourceView, ResourceLoadingView, ResourceErrorView {
     public typealias ResourceViewModel = UIImage
     
