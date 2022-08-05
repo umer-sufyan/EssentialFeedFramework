@@ -31,6 +31,7 @@ public final class ImageCommentsPresenter {
                           comment: "Title for the image comments view")
     }
     
+    @available(iOS 13.0, *)
     public static func map(
         _ comments: [ImageComment],
         currentDate: Date = Date(),
