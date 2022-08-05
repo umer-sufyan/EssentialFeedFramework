@@ -78,6 +78,7 @@
 		1856D80427B674C10072E922 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856D80327B674C10072E922 /* FeedViewModel.swift */; };
 		1856D80B27B6750D0072E922 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856D80A27B6750D0072E922 /* ResourceLoadingViewModel.swift */; };
 		1856D81227B675460072E922 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856D81127B675460072E922 /* ResourceErrorViewModel.swift */; };
+		18606E2E289D2AA0009857DF /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18606E2D289D2AA0009857DF /* CellController.swift */; };
 		1863544B277EE7810098FDF2 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863544A277EE7810098FDF2 /* CacheFeedUseCaseTests.swift */; };
 		1866B60C27B7B4A4007612B8 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B60B27B7B4A4007612B8 /* FeedLocalizationTests.swift */; };
 		1866B61727B7B93F007612B8 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877FC4C278D7B0100F953F2 /* FeedImageDataLoader.swift */; };
@@ -251,6 +252,7 @@
 		1856D80327B674C10072E922 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		1856D80A27B6750D0072E922 /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
 		1856D81127B675460072E922 /* ResourceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorViewModel.swift; sourceTree = "<group>"; };
+		18606E2D289D2AA0009857DF /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		1863544A277EE7810098FDF2 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		1866B60B27B7B4A4007612B8 /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedLocalizationTests.swift; path = "../../../../../../../04/UI + Presentation Module/Lecture 10/Decorator Pattern Decoupling UIKit Components From Threading Details, Removing Duplication, and Implementing Cross-Cutting Concerns In a Clean & SOLID Way/EssentialFeedFramework/EssentialFeedFramworkiOSTests/Feed Presentation/FeedLocalizationTests.swift"; sourceTree = "<group>"; };
 		186D6B5827806A0B00D19EBF /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				18286EF92789DFB7007A176D /* ListViewController.swift */,
+				18606E2D289D2AA0009857DF /* CellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1183,6 +1186,7 @@
 				18BCF58027DC6A760080F60B /* UITableView+HeaderSizing.swift in Sources */,
 				1878208327B63E5C00F9ECC6 /* ErrorView.swift in Sources */,
 				1878209D27B64A1400F9ECC6 /* UIRefreshControl+Helpers.swift in Sources */,
+				18606E2E289D2AA0009857DF /* CellController.swift in Sources */,
 				1877121927946A52008B380F /* UITableView+Dequeueing.swift in Sources */,
 				1884BD64278BF47400DBF125 /* UIView+Shimmering.swift in Sources */,
 				1814D926278D751C00D5E7B7 /* FeedImageCell.swift in Sources */,
