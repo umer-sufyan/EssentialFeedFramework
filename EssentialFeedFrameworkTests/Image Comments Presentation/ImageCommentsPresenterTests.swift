@@ -8,6 +8,7 @@
 import XCTest
 import EssentialFeedFramework
 
+@available(iOS 13.0, *)
 class ImageCommentsPresenterTests: XCTestCase {
 
     func test_title_isLocalized() {
