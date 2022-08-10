@@ -818,10 +818,10 @@
 		189047D7276D8A72003783C2 /* EssentialFeedFramework */ = {
 			isa = PBXGroup;
 			children = (
-				1852EEAA289BEF570041ACE4 /* Image Comments Presentation */,
 				1814DE1F28983A5800413C73 /* Shared Presentation */,
 				183B38ED284D8E380036C620 /* Shared API */,
 				183B38EE284D8E8B0036C620 /* Shared API Infra */,
+				1852EEAA289BEF570041ACE4 /* Image Comments Presentation */,
 				183B38FC284D8FD20036C620 /* Image Comments API */,
 				182FCF07284C860200F93E23 /* Image Comments Feature */,
 				189047D8276D8A72003783C2 /* EssentialFeedFramework.h */,
