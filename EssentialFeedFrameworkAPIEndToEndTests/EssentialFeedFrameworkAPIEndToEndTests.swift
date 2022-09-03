@@ -8,11 +8,9 @@
 import XCTest
 import EssentialFeedFramework
 
-class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
-
-    func test_endToEndTestServerGETFeedResult_mathesFixedTestAccountData() {
-         // ideally that should be between 3 to 5 sec
-        
+class EssentialFeedAPIEndToEndTests: XCTestCase {
+    
+    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
         case let .success(imageFeed)?:
             XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account image feed")
@@ -25,18 +23,14 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
             XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
             XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
             
-//            items.enumerated().forEach { (index, item) in
-//                XCTAssertEqual(item, expectedItem(at: index), "Unexpected item value at index \(index)")
-//            }
-            
         case let .failure(error)?:
             XCTFail("Expected successful feed result, got \(error) instead")
             
         default:
             XCTFail("Expected successful feed result, got no result instead")
-            
         }
     }
+    
     func test_endToEndTestServerGETFeedImageDataResult_matchesFixedTestAccountData() {
         switch getFeedImageDataResult() {
         case let .success(data)?:
@@ -49,15 +43,14 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
             XCTFail("Expected successful image data result, got no result instead")
         }
     }
-    //MARK: -Helpers
     
-    private func getFeedResult(file: StaticString = #file, line: UInt = #line) -> Swift.Result<[FeedImage],Error>? {
-        
+    // MARK: - Helpers
+    
+    private func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> Swift.Result<[FeedImage], Error>? {
         let client = ephemeralClient()
-        
         let exp = expectation(description: "Wait for load completion")
         
-        var receivedResult: Swift.Result<[FeedImage],Error>?
+        var receivedResult: Swift.Result<[FeedImage], Error>?
         client.get(from: feedTestServerURL) { result in
             receivedResult = result.flatMap { (data, response) in
                 do {
@@ -68,12 +61,12 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 60.0)
+        wait(for: [exp], timeout: 5.0)
+        
         return receivedResult
     }
     
-    private func getFeedImageDataResult(file: StaticString = #file, line: UInt = #line) -> Result<Data, Error>? {
-        
+    private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> Result<Data, Error>? {
         let client = ephemeralClient()
         let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
         let exp = expectation(description: "Wait for load completion")
@@ -82,6 +75,16 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
         client.get(from: url) { result in
             receivedResult = result.flatMap { (data, response) in
                 do {
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     return .success(try FeedImageDataMapper.map(data, from: response))
                 } catch {
                     return .failure(error)
@@ -89,21 +92,27 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
             }
             exp.fulfill()
         }
-        
-        wait(for: [exp], timeout: 120.0)
+        wait(for: [exp], timeout: 5.0)
         
         return receivedResult
     }
+    
     private var feedTestServerURL: URL {
         return URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
     }
-    private func ephemeralClient(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
+    
+    private func ephemeralClient(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
         trackForMemoryLeaks(client, file: file, line: line)
         return client
     }
+    
     private func expectedImage(at index: Int) -> FeedImage {
-        return FeedImage(id: id(at: index), description: description(at: index), location: location(at: index), url: imageURL(at: index))
+        return FeedImage(
+            id: id(at: index),
+            description: description(at: index),
+            location: location(at: index),
+            url: imageURL(at: index))
     }
     
     private func id(at index: Int) -> UUID {
@@ -148,5 +157,4 @@ class EssentialFeedFrameworkAPIEndToEndTests: XCTestCase {
     private func imageURL(at index: Int) -> URL {
         return URL(string: "https://url-\(index+1).com")!
     }
-
 }

@@ -13,10 +13,7 @@ public final class LocalFeedImageDataLoader {
         self.store = store
     }
 }
-
-extension LocalFeedImageDataLoader:FeedImageDataCache {
-    
-    
+extension LocalFeedImageDataLoader: FeedImageDataCache {
     public enum SaveError: Error {
         case failed
     }
@@ -31,8 +28,6 @@ extension LocalFeedImageDataLoader:FeedImageDataCache {
 }
 
 extension LocalFeedImageDataLoader: FeedImageDataLoader {
-    
-    
     public enum LoadError: Error {
         case failed
         case notFound
@@ -48,8 +43,5 @@ extension LocalFeedImageDataLoader: FeedImageDataLoader {
         }
         
         throw LoadError.notFound
-        
     }
-
-
 }

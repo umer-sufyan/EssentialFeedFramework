@@ -23,7 +23,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         
         XCTAssertEqual(store.receivedMessages, [.retrieve(dataFor: url)])
     }
-    
+
     func test_loadImageDataFromURL_failsOnStoreError() {
         let (sut, store) = makeSUT()
         
@@ -32,6 +32,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
             store.completeRetrieval(with: retrievalError)
         })
     }
+    
     func test_loadImageDataFromURL_deliversNotFoundErrorOnNotFound() {
         let (sut, store) = makeSUT()
         
@@ -48,10 +49,10 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
             store.completeRetrieval(with: foundData)
         })
     }
-    
+
     // MARK: - Helpers
     
-    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedImageDataLoader, store: FeedImageDataStoreSpy) {
+    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedImageDataLoader, store: FeedImageDataStoreSpy) {
         let store = FeedImageDataStoreSpy()
         let sut = LocalFeedImageDataLoader(store: store)
         trackForMemoryLeaks(store, file: file, line: line)
@@ -67,14 +68,9 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         return .failure(LocalFeedImageDataLoader.LoadError.notFound)
     }
     
-    private func never(file: StaticString = #file, line: UInt = #line) {
-        XCTFail("Expected no no invocations", file: file, line: line)
-    }
-    
-    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: Result<Data, Error>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        
-        
+    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: Result<Data, Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
+        
         let receivedResult = Result { try sut.loadImageData(from: anyURL()) }
         
         switch (receivedResult, expectedResult) {
@@ -89,5 +85,4 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
             XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
         }
     }
-
 }
