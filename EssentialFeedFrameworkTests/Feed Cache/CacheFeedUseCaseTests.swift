@@ -21,23 +21,22 @@ class CacheFeedUseCaseTests: XCTestCase {
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
         
-        sut.save(uniqueImageFeed().models) { _ in }
+        try? sut.save(uniqueImageFeed().models)
         
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
-
+    
         func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
             let timestamp = Date()
             let feed = uniqueImageFeed()
             let (sut, store) = makeSUT(currentDate: { timestamp })
             store.completeDeletionSuccessfully()
             
-            sut.save(feed.models) { _ in }
+            try? sut.save(feed.models)
             
             XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(feed.local, timestamp)])
         }
         
-            
             func test_save_failsOnDeletionError() {
                 let (sut, store) = makeSUT()
                 let deletionError = anyNSError()
@@ -69,31 +68,21 @@ class CacheFeedUseCaseTests: XCTestCase {
             // MARK: - Helpers
             
             private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
-                
-                
-                    let store = FeedStoreSpy()
-                    let sut = LocalFeedLoader(store: store, currentDate: currentDate)
-                    trackForMemoryLeaks(store, file: file, line: line)
-                    trackForMemoryLeaks(sut, file: file, line: line)
-                    return (sut, store)
-                }
-                
-                private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
-                    let exp = expectation(description: "Wait for save completion")
-                    action()
-                    
-                    var receivedError: Error?
-                    sut.save(uniqueImageFeed().models) { result in
-                        if case let Result.failure(error) = result { receivedError = error }
-                        exp.fulfill()
-                    }
-                    
-                    wait(for: [exp], timeout: 1.0)
-                    
-                    XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
-                    
-   
-                    
-                }
-                
+                let store = FeedStoreSpy()
+                let sut = LocalFeedLoader(store: store, currentDate: currentDate)
+                trackForMemoryLeaks(store, file: file, line: line)
+                trackForMemoryLeaks(sut, file: file, line: line)
+                return (sut, store)
             }
+            
+            private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+                action()
+                
+                do {
+                    try sut.save(uniqueImageFeed().models)
+                } catch {
+                    XCTAssertEqual(error as NSError?, expectedError, file: file, line: line)
+                }
+            }
+            
+        }

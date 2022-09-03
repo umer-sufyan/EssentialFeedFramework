@@ -16,14 +16,11 @@ public final class LocalFeedLoader {
         self.currentDate = currentDate
     }
 }
+
 extension LocalFeedLoader: FeedCache {
-    public typealias SaveResult = FeedCache.Result
-    
-    public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
-        completion(SaveResult {
-            try store.deleteCachedFeed()
-            try store.insert(feed.toLocal(), timestamp: currentDate())
-        })
+    public func save(_ feed: [FeedImage]) throws {
+        try store.deleteCachedFeed()
+        try store.insert(feed.toLocal(), timestamp: currentDate())
     }
 }
 
@@ -39,7 +36,6 @@ extension LocalFeedLoader {
         })
     }
 }
-
 extension LocalFeedLoader {
     public typealias ValidationResult = Result<Void, Error>
     
@@ -57,7 +53,6 @@ extension LocalFeedLoader {
         })
     }
 }
-
 private extension Array where Element == FeedImage {
     func toLocal() -> [LocalFeedImage] {
         return map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
